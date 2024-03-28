@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <style>
+            .post{
+                background-size: cover;
+                padding: 5%;
+                margin: 10%;
+                background-image: "https://thumbs.dreamstime.com/b/different-spices-herbs-stone-table-top-view-ingredients-cooking-food-background-different-spices-herbs-black-120232209.jpg";
+            }
+            h1{
+                color:rgb(238, 11, 11);
+                font-style: italic;
+            }
+           
+    
+        </style>
+    </head>
+<body>
+    <div class="container">
+    <center><h1 style="color:rgb(111, 87, 247)"><u>FOOD BLOG</u></h1></center>
+    {% for i in post %}
+    <div class="post">
+        <h1>{{i[1]}}</h1>
+        <p>{{i[2]}}</p> 
+        <small>posted at: {{i[3]}}</small>
+        <form method="POST" action="{{url_for('delete_post',id=i[0])}}" onsubmit="return confirm('Are you sure you want to delete this post?');">
+        <button>Delete</button>
+        </form>
+        <form method="GET" action="{{url_for('update_post',id=i[0])}}" >
+        <button>update</button>
+        </form>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

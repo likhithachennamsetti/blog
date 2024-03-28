@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body><center>
+        <form method="POST">
+            <label for="">title:</label>
+            <input name="title" type="text" value="{{post[1]}}"><br>
+            <label for="">Content:</label>
+            <textarea name="content" rows="5">{{post[1]}}</textarea><br>
+            <label for="">slug:</label>
+            <input name="slug" type="text" value="{{ post[4] }}"><br>
+            <button>Update post</button>
+        </form></center>
+
+    </body>
